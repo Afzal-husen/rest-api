@@ -109,13 +109,12 @@ export const trendVideo = async (req, res, next) => {
 
 
 export const randomVideo = async (req, res, next) => {
-  res.send("videos")
-  // try {
-  //   const videos = await videoModel.aggregate([ {$sample: {size: 40}} ])
-  //   res.status(200).json(videos)
-  // } catch (error) {
-  //   next(error)   
-  // }
+  try {
+    const videos = await videoModel.aggregate([ {$sample: {size: 40}} ])
+    res.status(200).json(videos)
+  } catch (error) {
+    next(error)   
+  }
 }
 
 
