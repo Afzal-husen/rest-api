@@ -12,6 +12,7 @@ import cors  from "cors"
 import cookieParser from "cookie-parser"
 const app = express();
 
+app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
 app.use("/api/v1/auth", authRouter);
@@ -19,7 +20,6 @@ app.use("/api/v1/user", userRouter);
 app.use("/api/v1/videos", videoRouter);
 app.use("/api/v1/comments", commentRouter);
 app.use(errorHandler);
-app.use(cors());
 
 
 
