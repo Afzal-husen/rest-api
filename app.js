@@ -8,6 +8,7 @@ import userRouter from "./routes/user.js"
 import videoRouter from "./routes/video.js"
 import commentRouter from "./routes/comment.js"
 import errorHandler from "./middleware/error-handler.js";
+import cors  from "cors"
 import cookieParser from "cookie-parser"
 const app = express();
 
@@ -18,6 +19,8 @@ app.use("/api/v1/user", userRouter);
 app.use("/api/v1/videos", videoRouter);
 app.use("/api/v1/comments", commentRouter);
 app.use(errorHandler);
+app.use(cors());
+
 
 
 
