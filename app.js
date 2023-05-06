@@ -12,7 +12,9 @@ import cors  from "cors"
 import cookieParser from "cookie-parser"
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: "https://yt-clone-video-app.netlify.app/"
+}));
 app.use(cookieParser());
 app.use(express.json());
 app.use("/api/v1/auth", authRouter);
