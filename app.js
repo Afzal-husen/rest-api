@@ -13,7 +13,7 @@ import cookieParser from "cookie-parser"
 const app = express();
 
 app.use(cors({
-    origin: "https://yt-clone-video-app.netlify.app/"
+    origin: "https://yt-clone-video-app.netlify.app"
 }));
 app.use(cookieParser());
 app.use(express.json());
